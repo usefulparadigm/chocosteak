@@ -1,0 +1,6 @@
+<h2>Recent Posts</h2>
+<ul>
+  <% _.each(posts, function(post) { %>
+    <li><%= post.attributes.title %></li>
+  <% }); %>
+</ul>    
