@@ -17,8 +17,8 @@ chocosteak.Views = chocosteak.Views || {};
         },
         
         render: function() {
-            console.log(this.collection)
-            this.$el.html(this.template({posts: this.collection.models}));
+            console.log(this.collection);
+            this.$el.html(this.template({posts: this.collection.toJSON()}));
             return this;
         }
 
