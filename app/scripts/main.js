@@ -8,13 +8,13 @@ window.chocosteak = {
     Routers: {},
     appConfig: {
         // Your WordPress Home URL
-        baseURL: 'http://192.168.0.8:8000'
+        apiURL: 'http://cookinfacebook.com/api'
     },
     init: function () {
         'use strict';
         
         var posts = new this.Collections.PostsCollection([], {
-            url: this.appConfig.baseURL+'/api/get_recent_posts/'
+            url: this.appConfig.apiURL+'/get_recent_posts/'
         });
         new this.Views.PostsView({
             collection: posts 

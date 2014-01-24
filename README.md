@@ -1,3 +1,14 @@
 ChocoSteak
 =====
-A Chocolate topped Backbone steak
+A ChocolateChip topped Backbone steak. delicious!!
+
+Wait, cooking now..
+
+
+License
+-----
+
+MIT.
+
+
+
