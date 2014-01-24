@@ -7,7 +7,8 @@ window.chocosteak = {
     Views: {},
     Routers: {},
     appConfig: {
-        baseURL: 'http://192.168.0.11:8000'
+        // Your WordPress Home URL
+        baseURL: 'http://192.168.0.8:8000'
     },
     init: function () {
         'use strict';

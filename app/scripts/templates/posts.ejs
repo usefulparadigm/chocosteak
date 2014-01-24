@@ -1,7 +1,20 @@
-<h2>Entries</h2>
+<h2>Recent Posts</h2>
 
-<ul class="list entries">
+<ul class="list posts">
   <% _.each(posts, function(post) { %>
-    <li><%= post.title %></li>
+    <li class="comp">
+      <% if (post.thumbnail) { %>
+        <aside>
+           <img src="<%= post.thumbnail %>" height="80px">
+        </aside>
+      <% } %>  
+      <div>
+         <h3><%= post.title %></h3>
+         <p><%= post.excerpt %></p>
+      </div>
+       <aside>
+          <span class="show-detail"></span>
+       </aside>
+    </li>
   <% }); %>
-</ul>    
+</ul>   
