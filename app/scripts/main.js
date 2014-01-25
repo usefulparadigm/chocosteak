@@ -12,13 +12,9 @@ window.chocosteak = {
     },
     init: function () {
         'use strict';
-        
-        var posts = new this.Collections.PostsCollection([], {
-            url: this.appConfig.apiURL+'/get_recent_posts/'
-        });
-        new this.Views.PostsView({
-            collection: posts 
-        });
+
+        new this.Routers.AppRouter();
+        Backbone.history.start();
     }
 };
 
