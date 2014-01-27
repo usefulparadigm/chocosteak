@@ -21,6 +21,11 @@
         <!-- build:js scripts/vendor/modernizr.js -->
         <script src="bower_components/modernizr/modernizr.js"></script>
         <!-- endbuild -->
+        <style type="text/css" media="screen">
+        /* overriding chui */
+          a.button.back, a.button.backTo { margin-right: 5px; }
+          a.button.back::after, a.button.backTo::after { background: none !important; }
+        </style>
     </head>
     <body>
         <!--[if lt IE 10]>
@@ -56,7 +61,6 @@
         <script src="scripts/collections/posts.js"></script>
         <script src="scripts/views/posts.js"></script>
         <script src="scripts/routes/app.js"></script>
-        <script src="scripts/views/single.js"></script>
         <!-- endbuild -->
 </body>
 </html>

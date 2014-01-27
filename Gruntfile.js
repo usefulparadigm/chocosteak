@@ -261,7 +261,7 @@ module.exports = function (grunt) {
         if (target === 'dist') {
             return grunt.task.run(['build', 'open', 'connect:dist:keepalive']);
         }
-
+        
         if (target === 'test') {
             return grunt.task.run([
                 'clean:server',
@@ -279,7 +279,7 @@ module.exports = function (grunt) {
             'createDefaultTemplate',
             'jst',
             'connect:livereload',
-            'open',
+            // 'open',
             'watch'
         ]);
     });

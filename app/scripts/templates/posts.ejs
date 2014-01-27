@@ -1,5 +1,5 @@
 <nav class="current">
-  <h1>ChocoSteak</h1>
+  <h1>Cookin' Facebook</h1>
 </nav>
 <article id="home" class="current">
   <section>
@@ -28,7 +28,7 @@
 <% _.each(posts, function(post) { %>
   <nav class="next">
     <a href='#' class='button back'>Navigation</a>
-    <h1>ChocoSteak</h1>
+    <h1>Cookin' Facebook</h1>
   </nav>
   <article id="post-<%= post.id %>" class="next">
     <section>
@@ -36,12 +36,24 @@
       <ul class="list">
         <li>
           <h3><%= post.title %></h3>
-          <div class="content" style="max-width: 100% !important;">
-            <%= post.content %>
-          </div>  
+          <div class="content">
+            <%= remove_span_style(post.content) %>
+          </div>
         </li>
       </ul>
       <p>Your copyright goes here.</p>
     </section>
   </article>
 <% }); %>
+
+<%
+function remove_span_style(html) {
+  // console.log(html);
+  // html = html.replace(/<[^>]*>/gim, '');
+  // html = html.replace(/<script[^>]*>([\\S\\s]*?)<\/script>/img, '');
+  html = html.replace(/<\/?span[^>]*>/gim,"");
+  return html;
+}
+%>
+
+

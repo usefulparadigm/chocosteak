@@ -17,22 +17,21 @@ chocosteak.Views = chocosteak.Views || {};
         initialize: function() {
             this.listenTo(this.collection, 'sync reset', this.render);
             // this.collection.fetch(); // Auto-load when created
-            this.render();  
+            this.render();
         },
         
         render: function() {
             // console.log(this.collection);
-            console.log(this.collection.toJSON());
             this.$el.html(this.template({posts: this.collection.toJSON()}));
             return this;
         },
         
-        showPost: function(event) {
-            var post = event.currentTarget,
-                postId = $(post).data('postId');
-            // update the URL and call the route function    
-            chocosteak.appRouter.navigate("posts/"+postId, {trigger: true});
-        }
+        // showPost: function(event) {
+        //     var post = event.currentTarget,
+        //         postId = $(post).data('postId');
+        //     // update the URL and call the route function    
+        //     chocosteak.appRouter.navigate("posts/"+postId, {trigger: true});
+        // }
 
     });
 
