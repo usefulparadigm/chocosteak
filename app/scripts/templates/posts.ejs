@@ -1,9 +1,13 @@
-<section>
-  <h2>Recent Posts</h2>
+<nav class="current">
+  <h1>ChocoSteak</h1>
+</nav>
+<article id="home" class="current">
+  <section>
+    <h2>Recent Posts</h2>
 
-  <ul class="list posts">
-    <% _.each(posts, function(post) { %>
-      <li class="comp">
+    <ul class="list" role="list">
+      <% _.each(posts, function(post) { %>
+      <li class='comp' data-goto="post-<%= post.id %>">
         <% if (post.thumbnail) { %>
           <aside>
              <img src="<%= post.thumbnail %>" height="80px">
@@ -11,13 +15,33 @@
         <% } %>  
         <div>
            <h3><%= post.title %></h3>
-           <!-- <h4><%= post.author.name %></h4> -->
-           <!-- <p><%= post.excerpt %></p> -->
         </div>
-         <aside>
-            <span class="show-detail"></span>
-         </aside>
+        <aside>
+          <span class="nav"></span>
+        </aside>
       </li>
-    <% }); %>
-  </ul>  
-</section>
+      <% }); %>
+    </ul>  
+  </section>
+</article>
+
+<% _.each(posts, function(post) { %>
+  <nav class="next">
+    <a href='#' class='button back'>Navigation</a>
+    <h1>ChocoSteak</h1>
+  </nav>
+  <article id="post-<%= post.id %>" class="next">
+    <section>
+      <h2>Posted at <%= post.date %> by <%= post.author.name %></h2>
+      <ul class="list">
+        <li>
+          <h3><%= post.title %></h3>
+          <div class="content" style="max-width: 100% !important;">
+            <%= post.content %>
+          </div>  
+        </li>
+      </ul>
+      <p>Your copyright goes here.</p>
+    </section>
+  </article>
+<% }); %>

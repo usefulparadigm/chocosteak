@@ -1,6 +1,5 @@
 /*global chocosteak, $*/
 
-
 window.chocosteak = {
     Models: {},
     Collections: {},
@@ -12,8 +11,7 @@ window.chocosteak = {
     },
     init: function () {
         'use strict';
-
-        new this.Routers.AppRouter();
+        this.appRouter = new this.Routers.AppRouter();
         Backbone.history.start();
     }
 };

@@ -8,17 +8,31 @@ chocosteak.Routers = chocosteak.Routers || {};
     chocosteak.Routers.AppRouter = Backbone.Router.extend({
 
         routes: {
-            '': 'index'
+            '': 'index',
+            // 'posts/:id': 'show'
+        },
+        
+        initialize: function() {
+            // create collection for cache
+            this.posts = new chocosteak.Collections.PostsCollection([], {
+                url: chocosteak.appConfig.apiURL+'/get_recent_posts/'
+            });
+            this.posts.fetch();
         },
         
         index: function() {
-            var posts = new chocosteak.Collections.PostsCollection([], {
-                url: chocosteak.appConfig.apiURL+'/get_recent_posts/'
-            });
             new chocosteak.Views.PostsView({
-                collection: posts 
+                collection: this.posts 
             });
-        }
+        },
+        
+        // show: function(id) {
+        //     var post = this.posts.findWhere({id: parseInt(id)});
+        //     console.log(post);
+        //     new chocosteak.Views.SingleView({
+        //        model: post
+        //     });
+        // }
 
     });
 

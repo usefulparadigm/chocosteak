@@ -10,10 +10,14 @@ chocosteak.Views = chocosteak.Views || {};
         el: '#main',
         template: JST['app/scripts/templates/posts.ejs'],
         
+        // events: {
+        //     'click .post': 'showPost' 
+        // },
+        
         initialize: function() {
             this.listenTo(this.collection, 'sync reset', this.render);
-            this.collection.fetch(); // Auto-load when created
-          // this.render();  
+            // this.collection.fetch(); // Auto-load when created
+            this.render();  
         },
         
         render: function() {
@@ -21,6 +25,13 @@ chocosteak.Views = chocosteak.Views || {};
             console.log(this.collection.toJSON());
             this.$el.html(this.template({posts: this.collection.toJSON()}));
             return this;
+        },
+        
+        showPost: function(event) {
+            var post = event.currentTarget,
+                postId = $(post).data('postId');
+            // update the URL and call the route function    
+            chocosteak.appRouter.navigate("posts/"+postId, {trigger: true});
         }
 
     });
