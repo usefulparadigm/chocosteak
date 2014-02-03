@@ -279,7 +279,7 @@ module.exports = function (grunt) {
             'createDefaultTemplate',
             'jst',
             'connect:livereload',
-            // 'open',
+            'open',
             'watch'
         ]);
     });
